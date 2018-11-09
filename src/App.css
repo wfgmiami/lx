@@ -1,32 +1,172 @@
-.App {
-  text-align: center;
+.ag-header-cell-label[col-id="text"]{
+    justify-content: flex-start;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.ag-header-cell-label[col-id="symbol"]{
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.ag-header-cell-label {
+  justify-content: flex-end;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ag-header-group-cell-label {
+  justify-content: center;
 }
+
+.whiteText {
+  color: #fff !important;
+  font-size: 14px !important;
+}
+
+
+a, li {
+  font-family: Roboto, sans-serif;
+  /* menu item text color */
+  color: #6b6b6b;
+  text-decoration: none;
+}
+
+i {
+  border: solid #8db863;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  margin-left: 5px;
+  padding: 3px;
+}
+
+.arrowDown {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+.drop {
+  position: relative;
+  /* z-index: 100; */
+}
+.drop ul {
+  position: absolute;
+  padding-left: 2px;
+  top: 2em;
+  transition: all 0.3s ease;
+  transform: scale(0);
+  transform-origin: 0 0;
+  z-index: 100;
+  /* submenu box background color */
+  background: #F6FFED;
+  color: #333;
+  box-shadow: 0 4px 3px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12); */
+}
+.lastMenuItem {
+  right: 2px;
+}
+.drop ul li {
+  display: block;
+  width: 100%;
+}
+.drop ul li a {
+  width: 100%;
+  padding: 8px;
+  display: inline-block;
+  white-space: pre;
+  box-sizing: border-box;
+  /* submenu item text color */
+  color: #000;
+}
+.drop ul li a:hover {
+  /* background when over submenu item */
+  background: #8db863;
+}
+.drop:hover ul {
+  transform: scale(1);
+}
+.Navbar {
+  /* background-color: #2D2F30; */
+  border-bottom: 2px solid #8db863;
+  display: flex;
+  padding-right: 25px;
+  font-family: sans-serif;
+  /* color: white; */
+  max-height: 50px;
+  margin-bottom: 10px;
+}
+.Infobar {
+  /* background-color: #2D2F30; */
+  display: flex;
+  /* padding-right: 25px; */
+  font-family: sans-serif;
+  /* color: white; */
+  max-height: 30px;
+  /* margin-bottom: 10px; */
+}
+.nav > li {
+  font-size: 14px;
+  display: inline-block;
+  padding: 2px 12px;
+  cursor: pointer;
+}
+.nav > li:hover {
+  /*hover over menu item */
+  background: rgba(141, 184, 99, 0.2);
+}
+
+.NavbarLink {
+  padding-right: 8px;
+}
+.NavbarItems {
+  display: flex;
+}
+.NavbarItemsRight {
+  margin-left:auto;
+}
+.NavbarItemsLeft {
+  margin-right:auto;
+}
+.NavbarLinkToggle {
+  display: none;
+}
+.leapLogo {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 26px;
+  font-weight: 700;
+  color: rgb(156, 146, 146);
+  font-family: 'Diplomata SC', arial, serif;
+}
+
+@media only screen and (max-width: 768px) {
+  .NavbarItems,
+  .Navbar {
+    flex-direction: column;
+    max-height: none;
+  }
+  .NavbarItems {
+    display:none;
+  }
+  .NavbarItemsRight {
+    margin-left:0;
+  }
+  .NavbarToggleShow {
+    display: flex;
+  }
+  .leapLogo {
+    margin-top: 10px;
+    margin-left: 30px;
+    font-weight: 700;
+  }
+  .NavbarLinkToggle {
+    align-self: flex-end;
+    margin-top: 10px;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+  }
+  .lastMenuItem {
+    left: 10px;
+    right: auto;
+  }
+
+}
+
+
