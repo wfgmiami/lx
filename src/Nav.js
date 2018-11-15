@@ -60,55 +60,58 @@ class Nav extends Component {
 
     // console.log('this state', this.state)
     return (
-      <div>
-      <div className='Navbar'>
-        <div style={{ padding:'0', margin: '0'}} className="NavbarLink NavbarLinkBrand">
-          <img
-            style={{ width: '50', height: '50' }}
-            src="LA_logo.png"
-            alt="la-logo"
-          />
-        </div>
-
-        <div className="NavbarLink NavbarLinkToggle">
-          <i className="fas fa-bars"></i>
-        </div>
-
-        <nav className="NavbarItems">
-          <div className="NavbarLink">
-            <div className="leapLogo">
-              LEAPx
-            </div>
+      <div style={{padding: '0 20px 0 20px'}}>
+        <div className='Navbar'>
+          <div style={{ padding:'0', margin: '0'}} className="NavbarLink NavbarLinkBrand">
+            <img
+              style={{ width: '50', height: '50' }}
+              src="LA_logo.png"
+              alt="la-logo"
+            />
           </div>
-        </nav>
 
-        <div className="NavbarItems NavbarItemsRight">
-          <ul className="NavbarItems nav">
-            {navigationConfig.map( (item,idx) => {
+          <div className="NavbarLink NavbarLinkToggle">
+            <i className="fas fa-bars"></i>
+          </div>
+
+          <nav className="NavbarItems">
+            <div className="NavbarLink">
+              <div className="leapLogo">
+                LEAPx
+              </div>
+            </div>
+          </nav>
+
         
-            if(item.submenu){
-              return (
-                <li key={idx} className="drop">{item.title}
-                <i className="arrowDown"></i>
       
-                  <ul className={ menuItemsCount === idx + 1 ? 'lastMenuItem' : null }>
-                  { item.submenu.map( (submenu, id) => (
-                      <li key={id}><a href="http://www.g.com">{submenu.title}</a></li>
-                    ))
-                  }
-                  </ul>
-                </li>
-              )
-            }else{
-              return  (<li key={idx}><a href="http://www.g.com">{item.title}</a></li>) 
-            }
-       
-            })}
-          </ul>
-        </div>  
+          <div className="NavbarItems NavbarItemsRight">
+            <ul className="NavbarItems nav">
+              {navigationConfig.map( (item,idx) => {
+          
+              if(item.submenu){
+                return (
+                  <li key={idx} className="drop">{item.title}
+                  <span className="sub-arrow"></span>
+        
+                    <ul className={ menuItemsCount === idx + 1 ? 'lastMenuItem' : null }>
+                    { item.submenu.map( (submenu, id) => (
+                        <li key={id}><a href="http://www.g.com">{submenu.title}</a></li>
+                      ))
+                    }
+                    </ul>
+                  </li>
+                )
+              }else{
+                return  (<li key={idx}><a href="http://www.g.com">{item.title}</a></li>) 
+              }
+        
+              })}
+            </ul>
+          </div>  
 
-      </div>
-      <InfoBar/>
+
+        </div>
+        <InfoBar/>
       </div>
     );
   }

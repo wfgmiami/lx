@@ -151,7 +151,8 @@ class App extends Component {
         style={{
           boxSizing: "border-box",
           height: "100%",
-          width: "100%"
+          width: "100%",
+          padding: '0 20px 0 20px'
         }}
         className="ag-theme-balham"
       >
