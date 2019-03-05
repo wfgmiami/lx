@@ -19,20 +19,11 @@
   font-size: 14px !important;
 }
 
-
 a, li {
   font-family: Roboto, sans-serif;
   /* menu item text color */
   color: #6b6b6b;
   text-decoration: none;
-}
-
-i {
-  border: solid #8db863;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  margin-left: 5px;
-  padding: 3px;
 }
 
 .sub-arrow {
@@ -53,10 +44,12 @@ i {
   position: relative;
   /* z-index: 100; */
 }
+
+/* drop-down menu */
 .drop ul {
   position: absolute;
   padding-left: 2px;
-  top: 2em;
+  top: 3em;
   transition: all 0.3s ease;
   transform: scale(0);
   transform-origin: 0 0;
@@ -67,13 +60,16 @@ i {
   box-shadow: 0 4px 3px rgba(0, 0, 0, 0.25);
   /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16), 0 2px 8px 0 rgba(0, 0, 0, 0.12); */
 }
+
 .lastMenuItem {
   right: 2px;
 }
+
 .drop ul li {
   display: block;
   width: 100%;
 }
+
 .drop ul li a {
   width: 100%;
   padding: 8px;
@@ -83,38 +79,45 @@ i {
   /* submenu item text color */
   color: #000;
 }
+
 .drop ul li a:hover {
   /* background when over submenu item */
   background: #8db863;
 }
+
 .drop:hover ul {
   transform: scale(1);
 }
+
 .Navbar {
-  /* background-color: #2D2F30; */
-  border-bottom: 2px solid #8db863;
+  background-color: #2D2F30;
+  border-bottom: 3px solid #8db863;
   display: flex;
   padding-right: 25px;
   font-family: sans-serif;
-  /* color: white; */
   max-height: 50px;
   margin-bottom: 10px;
+  
 }
+
 .Infobar {
-  /* background-color: #2D2F30; */
   display: flex;
-  /* padding-right: 25px; */
   font-family: sans-serif;
-  /* color: white; */
   max-height: 30px;
-  /* margin-bottom: 10px; */
 }
+
+.nav {
+  margin: 0;
+}
+
 .nav > li {
   font-size: 14px;
   display: inline-block;
-  padding: 2px 12px;
+  padding: 15px 12px;
   cursor: pointer;
+  color: white;
 }
+
 .nav > li:hover {
   /*hover over menu item */
   background: rgba(141, 184, 99, 0.2);
@@ -123,15 +126,20 @@ i {
 .NavbarLink {
   padding-right: 8px;
 }
+
 .NavbarItems {
+  padding: 0;
   display: flex;
 }
+
 .NavbarItemsRight {
   margin-left:auto;
 }
+
 .NavbarLinkToggle {
   display: none;
 }
+
 .leapLogo {
   margin-top: 20px;
   margin-left: 20px;
@@ -140,6 +148,7 @@ i {
   color: rgb(156, 146, 146);
   font-family: 'Diplomata SC', arial, serif;
 }
+
 .Pricing {
   height: 20px;
   margin-top: 5px;
@@ -150,33 +159,53 @@ i {
   border-right: 2px solid black;
 }
 
+@media only screen and (max-width: 1000px) {
+  .leapLogo {
+    font-size: 22px;
+  }
+}
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 960px) {
+  .leapLogo {
+    display: 18px;
+  }
+  .nav > li {
+    padding: 15px 8px;
+  }
+}
+
+@media only screen and (max-width: 860px) {
   .NavbarItems,
   .Navbar {
     flex-direction: column;
     max-height: none;
   }
+
   .NavbarItems {
     display:none;
   }
+
   .NavbarItemsRight {
     margin-left:0;
   }
+
   .NavbarToggleShow {
     display: flex;
   }
+
   .leapLogo {
     margin-top: 10px;
     margin-left: 30px;
     font-weight: 700;
   }
+
   .Pricing {
     margin-top: 10px;
     margin-left: 30px;
     font-size: 14px;
     font-weight: 500;
   }
+
   .NavbarLinkToggle {
     align-self: flex-end;
     margin-top: 10px;
@@ -184,10 +213,12 @@ i {
     position: absolute;
     cursor: pointer;
   }
+
   .lastMenuItem {
     left: 10px;
     right: auto;
   }
+
   .sub-arrow {
     right: auto;
     margin-left: 5px;

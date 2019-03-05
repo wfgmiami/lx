@@ -18,6 +18,7 @@ const cols = Array.from(document.getElementsByClassName("ag-header-cell-label"))
 class App extends Component {
   constructor(props){
     super(props);
+    this.divRef = React.createRef();
     this.state= {
       rowData: rowData,
       columnDefs: this.createColumns(columnDefs),
@@ -28,7 +29,7 @@ class App extends Component {
     
   }
   componentDidMount = () => {
-
+    console.log("div ref value ", this.divRef.current)
     const textColumns = ["Ticker", "Description","Curr", "Name"];
     const symbolColumns = ["RtgX", "Rating"];
     let cols = Array.from(document.getElementsByClassName("ag-header-cell-label"))
@@ -115,7 +116,7 @@ class App extends Component {
       }
     })
   }
-
+ 
   getFormatter = (formatName) => {
     // console.log('formatter ', formatName)
     switch (formatName) {
@@ -148,6 +149,7 @@ class App extends Component {
       <Nav/>
       <div
         id="myGrid"
+        ref={this.divRef}
         style={{
           boxSizing: "border-box",
           height: "100%",

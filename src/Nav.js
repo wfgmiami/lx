@@ -62,7 +62,7 @@ class Nav extends Component {
     return (
       <div style={{padding: '0 20px 0 20px'}}>
         <div className='Navbar'>
-          <div style={{ padding:'0', margin: '0'}} className="NavbarLink NavbarLinkBrand">
+          <div className="NavbarLink NavbarLinkBrand">
             <img
               style={{ width: '50', height: '50' }}
               src="LA_logo.png"
@@ -81,8 +81,6 @@ class Nav extends Component {
               </div>
             </div>
           </nav>
-
-        
       
           <div className="NavbarItems NavbarItemsRight">
             <ul className="NavbarItems nav">
@@ -102,7 +100,7 @@ class Nav extends Component {
                   </li>
                 )
               }else{
-                return  (<li key={idx}><a href="http://www.g.com">{item.title}</a></li>) 
+                return  (<li key={idx}>{item.title}</li>) 
               }
         
               })}
